@@ -1,0 +1,2 @@
+#!/bin/bash
+if git st &>/dev/null; then git branch | grep '*' | awk '{print "\x1b[33;44m(" $2 ")\x1b[0m"}'; fi
