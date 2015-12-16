@@ -11,7 +11,7 @@ syntax on
 "set autoindent
 set fileencodings=ucs-bom,utf-8,gb18030,cp936,big5,euc-jp,sjis,euc-kr,ucs-2le,latin1
 set tabstop=4 softtabstop=4 shiftwidth=4 scrolloff=3 sidescrolloff=5 timeoutlen=350 mouse=
-set modeline cindent expandtab cursorline number ignorecase magic wrap wrap
+set modeline cindent expandtab cursorline number ignorecase magic wrap
 set hlsearch incsearch showcmd ruler nobackup
 set laststatus=2 statusline=\ %F%m%r\ \ \ %{getcwd()}%h\ \ \ Line:\ %l/%L:%c
 
@@ -24,21 +24,21 @@ else
 endif
 
 autocmd BufNewFile,BufRead *.c call CPPSET()
-autocmd BufNewFile,BufRead *.c set makeprg=gcc\ -O2\ -Wall\ -Wno-unused-result\ -o\ %<.exe\ %
+autocmd BufNewFile,BufRead *.c setlocal makeprg=gcc\ -O2\ -Wall\ -Wno-unused-result\ -o\ %<.exe\ %
 
 autocmd BufNewFile,BufRead *.cpp call CPPSET()
 autocmd BufNewFile,BufRead *.php call PHPSET()
 autocmd BufNewFile,BufRead *.java call JAVASET()
 autocmd BufNewFile,BufRead *.py call PYSET()
 
-autocmd BufNewFile,BufRead Makefile set noet
-autocmd BufNewFile,BufRead makefile set noet
+autocmd BufNewFile,BufRead Makefile setlocal noet
+autocmd BufNewFile,BufRead makefile setlocal noet
 
 set complete+=kidt
 
 func! CPPSET()
-    set cindent
-    set makeprg=g++\ -O2\ -Wall\ -Wno-unused-result\ -D__DEBUG__\ -o\ %<.exe\ %
+    setlocal cindent
+    setlocal makeprg=g++\ -O2\ -Wall\ -Wno-unused-result\ -D__DEBUG__\ -o\ %<.exe\ %
     map <F9> :w!<cr>:make<cr><C-L>:cl<cr>
     map <F7> :!gdb %<.exe<cr><C-L>
     if has('win32')
@@ -57,20 +57,19 @@ endfunc
 
 func! PYSET()
     if has('win32')
-        map <F9> :w!<cr>:!start cmd /c "python % && pause \|\| pause"<cr><cr><C-L>
-        map <C-F9> <esc><F9>
+        map <F8> :w!<cr>:!start cmd /c "python % && pause \|\| pause"<cr><cr><C-L>
+        map <C-F8> <esc><F8>
     else
-        map <F8> <esc>:w!<cr>:!python -m py_compile %; rm -f %<.pyc<cr>
-        map <F9> :w!<cr>:!python %<cr>
-        map <C-F9> <esc><F9>
+        map <F9> <esc>:w!<cr>:!python -m py_compile %; rm -f %<.pyc<cr>
+        map <F8> :w!<cr>:!python %<cr>
     endif
-    set expandtab
+    setlocal expandtab
 endfunc
 
 func! PHPSET()
     "phpcs: php code sniffer (with psr2)
     map <F9> <esc>:w!<cr>:!php -l % && phpcs %<cr>
-    set cindent
+    setlocal cindent
     if has('win32')
         map <F8> <esc>:!start cmd /c "d:/web/php/php.exe % && pause \|\| pause"<cr><cr><C-L>
     else
@@ -79,8 +78,8 @@ func! PHPSET()
 endfunc!
 
 func! JAVASET()
-    set makeprg=javac\ %
-    set cindent
+    setlocal makeprg=javac\ %
+    setlocal cindent
     map <F9> :w!<cr>:make<cr><C-L>:cl<cr>
     "For windows, use
     if has('win32')
