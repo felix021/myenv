@@ -1,0 +1,4 @@
+#!/bin/bash
+
+bin=`dirname $0`
+$bin/PHP_CodeSniffer-2.3.4/scripts/phpcbf --standard=PSR2 $*

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+files="/var/log/nginx/access.log"
+
+tail -f {$files} | add_color $*

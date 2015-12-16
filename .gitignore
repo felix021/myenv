@@ -4,6 +4,8 @@ __pycache__/
 
 # C extensions
 *.so
+*.a
+*.o
 
 # Distribution / packaging
 .Python
@@ -55,3 +57,12 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#vim
+*.swp
+*.swp
+
+#mac
+.DS_Store
+.Trashes
+.SpotLight-V100

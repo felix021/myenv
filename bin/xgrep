@@ -1,0 +1,3 @@
+#!/bin/bash
+set -x
+find . -name "$1" -exec grep "{}" -Hnie "$2" \;

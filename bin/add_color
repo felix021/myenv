@@ -1,0 +1,18 @@
+#!/usr/bin/python
+#coding:utf-8
+
+import os
+import sys
+import re
+
+patterns = [re.compile('^20../../.. ..:..:.. \[(error|warn|trace|info)\]')]
+
+for pat in sys.argv[1:]:
+    patterns.append(re.compile(pat))
+
+
+while True:
+    line = sys.stdin.readline()
+    for pat in patterns:
+        line = re.sub(pat, "\x1b[33;44m\g<0>\x1b[0m", line)
+    sys.stdout.write(line)
