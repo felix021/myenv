@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#compile php extension
+
+#modify this when necessary
+PHP_ROOT=/usr
+
+$PHP_ROOT/bin/phpize
+
+./configure --with-php-config=$PHP_ROOT/bin/php-config
+
+if make -j 2; then
+    ls -l .libs/*.so
+fi
