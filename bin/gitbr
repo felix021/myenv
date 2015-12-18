@@ -1,2 +1,6 @@
 #!/bin/bash
-if git st &>/dev/null; then git branch | grep '*' | awk '{print "\x1b[33;44m(" $2 ")\x1b[0m"}'; fi
+if git st &>/dev/null; then
+    git branch | grep '*' | awk '{print "(" $2 ")"}';
+    #item2+bash的环境加上颜色以后，命令敲长了换行会出问题。
+    #git branch | grep '*' | awk '{print "\x1b[33;44m(" $2 ")\x1b[0m"}';
+fi

@@ -64,6 +64,7 @@ func! PYSET()
         map <F8> :w!<cr>:!python %<cr>
     endif
     setlocal expandtab
+    map <F5> ggVGd<esc>:call PYTEMPLATE()<cr>Go
 endfunc
 
 func! PHPSET()
@@ -149,6 +150,20 @@ call append(line('$'), "{")
 call append(line('$'), "    return 0;")
 call append(line('$'), "}")
 call append(line('$'), "")
+endfunc
+
+func! PYTEMPLATE()
+    call setline(1,        "#!/usr/bin/python")
+    call append(line('$'), "#coding:utf-8")
+    call append(line('$'), "")
+    call append(line('$'), "import os")
+    call append(line('$'), "import sys")
+    call append(line('$'), "import time")
+    call append(line('$'), "try:")
+    call append(line('$'), "    import simplejson as json")
+    call append(line('$'), "except:")
+    call append(line('$'), "    import json")
+    call append(line('$'), "")
 endfunc
 
 "End of Felix's customization
