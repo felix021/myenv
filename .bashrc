@@ -10,6 +10,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias l='ls -l'
 
+export EDITOR=vim
 export PATH=$PATH:~/bin
 export PS1='\u@\h:\W `gitbr`$ '
 

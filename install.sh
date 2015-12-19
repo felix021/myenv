@@ -13,6 +13,7 @@ function color_text()
 
 echo "export PATH=\$PATH:$here/bin" >> ~/.bashrc
 echo "source $here/.bashrc" >> ~/.bashrc
+source $here/.bashrc
 
 if [ -e ~/.vimrc ]; then
     mv ~/.vimrc ~/.vimrc.bak
@@ -21,4 +22,4 @@ fi
 
 ln -s $here/.vimrc ~/.vimrc
 
-source git_alias
+source $here/git_alias
