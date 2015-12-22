@@ -30,6 +30,8 @@ autocmd BufNewFile,BufRead *.cpp call CPPSET()
 autocmd BufNewFile,BufRead *.php call PHPSET()
 autocmd BufNewFile,BufRead *.java call JAVASET()
 autocmd BufNewFile,BufRead *.py call PYSET()
+autocmd BufNewFile,BufRead *.js call JSSET()
+autocmd BufNewFile,BufRead *.scm call SCHEMESET()
 
 autocmd BufNewFile,BufRead Makefile setlocal noet
 autocmd BufNewFile,BufRead makefile setlocal noet
@@ -88,6 +90,20 @@ func! JAVASET()
     else
         map <F8> :!time java "%<"; read -p "Press Enter..."&<cr><cr><C-L>
     endif
+endfunc
+
+func! JSSET()
+    setlocal cindent
+    map <F9> :w!<cr>:!jsl -process %<cr>
+endfunc!
+
+func! SCHEMESET()
+    if has('win32')
+        map <F8> :w!<cr>:!start cmd /c "guile % && pause \|\| pause"<cr><cr><C-L>
+    else
+        map <F8> :w!<cr>:!time guile %<cr>
+    endif
+    setlocal expandtab
 endfunc
 
 "map keys

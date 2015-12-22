@@ -1,1 +1,4 @@
 #Adblock Custom List
+
+!qq.com: filter video
+##DIV[class="rv-root-v2 rv-js-root"]
