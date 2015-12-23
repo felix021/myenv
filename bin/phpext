@@ -3,7 +3,7 @@
 #compile php extension
 
 #modify this when necessary
-PHP_ROOT=/usr
+PHP_ROOT=/opt/php/
 
 $PHP_ROOT/bin/phpize
 

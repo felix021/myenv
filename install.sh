@@ -23,3 +23,8 @@ fi
 ln -s $here/.vimrc ~/.vimrc
 
 source $here/git_alias
+
+if [ `uname` == 'Darwin' ]; then
+    #Finder: show full path in title
+    defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+fi

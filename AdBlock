@@ -1,4 +1,22 @@
 #Adblock Custom List
 
-!qq.com: filter video
+@@inoreader.com$document
+
+!*.qq.com video
 ##DIV[class="rv-root-v2 rv-js-root"]
+##DIV[id="relVideo"][class="relVideo"]
+tech.qq.com##DIV[id="ch"]
+stock.qq.com##DIV[id="ch"]
+finance.qq.com##DIV[id="ch"]
+finance.qq.com##DIV[id="focus_01"]
+finance.qq.com##DIV[class="picbox"]
+finance.qq.com##UL[class="clearfix"]
+finance.qq.com##DIV[id="sideBars"][class="side"]
+
+reg.163.com##A[class="yxAdv"]
+www.baidu.com##DIV[class="rUWaeG"]
+www.baidu.com##DIV[id="con-ar"]
+id.qq.com##DIV[id="notice"][class="notice"]
+www.tuniu.com##DIV[class="m-app-open"]
+m.cnbeta.com##DIV[class="cbimage"]
+
