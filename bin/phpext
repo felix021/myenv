@@ -4,6 +4,9 @@
 
 #modify this when necessary
 PHP_ROOT=/opt/php/
+if [ "$LOCAL_PHP_ROOT" ]; then
+    PHP_ROOT=$LOCAL_PHP_ROOT
+fi
 
 $PHP_ROOT/bin/phpize
 
