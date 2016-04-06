@@ -12,7 +12,7 @@ alias l='ls -l'
 
 export EDITOR=vim
 export PATH=$PATH:~/bin
-export PS1='\u@\h:\W \[`gitbr`\]$ '
+export PS1='\u@\h:\W \[`gitbr`\]`echo -ne "\x1b]2;\h: \W\x7"`$ '
 
 ### man page colors
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -31,4 +31,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#test2
+alias glog='git log --oneline --decorate --color --graph'
+alias gup='git pull --rebase'

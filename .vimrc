@@ -151,6 +151,7 @@ call setline(1,        "#include<iostream>")
 call append(line('$'), "#include<algorithm>")
 call append(line('$'), "#include<cstdio>")
 call append(line('$'), "#include<cstdlib>")
+call append(line('$'), "#include<cstring>")
 call append(line('$'), "#include<set>")
 call append(line('$'), "#include<map>")
 call append(line('$'), "#include<vector>")
@@ -206,3 +207,4 @@ endif " has("autocmd")
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
     \ | wincmd p | diffthis
 
+colorscheme desert
