@@ -1,5 +1,5 @@
 #!/bin/bash
-if git st &>/dev/null; then
+if git log -n 0 &>/dev/null; then
     branch=`git branch | grep '*' | awk '{print $2}'`
     echo -n "($branch)"
     #item2+bash的环境加上颜色以后，命令敲长了换行会出问题。
