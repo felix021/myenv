@@ -14,6 +14,8 @@ export EDITOR=vim
 export PATH=$PATH:~/bin
 export PS1='\u@\h:\W `gitbr;echo -ne "\[\x1b]2;\h:${PWD#$HOME/}\[\x7\]"`$ '
 
+export LESSCHARSET=utf-8
+
 ### man page colors
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
