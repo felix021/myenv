@@ -138,6 +138,7 @@ class Generic_Sniffs_Files_LineLengthSniff implements PHP_CodeSniffer_Sniff
             $error = 'Line exceeds maximum limit of %s characters; contains %s characters';
             $phpcsFile->addError($error, $stackPtr, 'MaxExceeded', $data);
         } else if ($lineLength > $this->lineLimit) {
+            /*
             $data = array(
                      $this->lineLimit,
                      $lineLength,
@@ -145,6 +146,7 @@ class Generic_Sniffs_Files_LineLengthSniff implements PHP_CodeSniffer_Sniff
 
             $warning = 'Line exceeds %s characters; contains %s characters';
             $phpcsFile->addWarning($warning, $stackPtr, 'TooLong', $data);
+             */
         }
 
     }//end checkLineLength()
