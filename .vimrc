@@ -24,7 +24,7 @@ else
 endif
 
 autocmd BufNewFile,BufRead *.c call CPPSET()
-autocmd BufNewFile,BufRead *.c setlocal makeprg=gcc\ -O2\ -Wall\ -Wno-unused-result\ -o\ %<.exe\ %
+autocmd BufNewFile,BufRead *.c setlocal makeprg=gcc\ -O2\ -Wall\ -Wno-unused-result\ -o\ %<.exe\ %\ -lm
 
 autocmd BufNewFile,BufRead *.cpp call CPPSET()
 autocmd BufNewFile,BufRead *.php call PHPSET()
@@ -40,7 +40,7 @@ set complete+=kidt
 
 func! CPPSET()
     setlocal cindent
-    setlocal makeprg=g++\ -O2\ -Wall\ -Wno-unused-result\ -D__DEBUG__\ -o\ %<.exe\ %
+    setlocal makeprg=g++\ -O2\ -Wall\ -Wno-unused-result\ -D__DEBUG__\ -o\ %<.exe\ %\ -lm
     map <F9> :w!<cr>:make<cr><C-L>:cl<cr>
     map <F7> :!gdb %<.exe<cr><C-L>
     if has('win32')

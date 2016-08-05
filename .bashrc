@@ -34,4 +34,6 @@ if ! shopt -oq posix; then
 fi
 
 alias glog='git log --oneline --decorate --color --graph'
+alias glogc="git log --pretty=format:\"%C(auto)%h %Cgreen%an%Creset %C(auto)%d %s\""
+
 alias gup='git pull --rebase'
