@@ -1,0 +1,10 @@
+#!/usr/bin/python
+#coding:utf-8
+
+import sys
+try:
+    import simplejson as json
+except:
+    import json
+
+sys.stdout.write(json.dumps(json.loads(sys.stdin.read()), indent=4))
