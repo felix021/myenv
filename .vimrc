@@ -40,7 +40,7 @@ set complete+=kidt
 
 func! CPPSET()
     setlocal cindent
-    setlocal makeprg=g++\ -O2\ -Wall\ -Wno-unused-result\ -D__DEBUG__\ -o\ %<.exe\ %\ -lm
+    setlocal makeprg=g++\ -O2\ -Wall\ -Wno-unused-result\ -D__DEBUG__\ -o\ %<.exe\ %\ -lm\ -std=c++11
     map <F9> :w!<cr>:make<cr><C-L>:cl<cr>
     map <F7> :!gdb %<.exe<cr><C-L>
     if has('win32')
