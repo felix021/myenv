@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+#coding:utf-8
+
+# sql formatter
+
+import sys
+try:
+    import sqlparse
+except:
+    print("Please install sqlparse using 'pip3 install sqlparse'")
+    exit(1)
+
+query = sys.stdin.read()
+# Format the SQL query with proper indentation
+formatted = sqlparse.format(query,
+                          reindent=True,
+                          keyword_case='upper',
+                          indent_width=4,
+                          compact=True)
+print(formatted)
